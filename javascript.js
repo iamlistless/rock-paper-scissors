@@ -1,28 +1,29 @@
-let computerWeapon = ["Rock", "Paper", "Scissors"];
-let playerWeapon = prompt("Choose your weapon... Rock, Paper, Scissors?")
+function game() {
 
-function getComputerChoice(choiceOfWeapon) { 
-        return choiceOfWeapon[Math.floor(Math.random() * computerWeapon.length)];
+    const choiceOfWeapon = ["Rock", "Paper", "Scissors"];
+
+    function getComputerChoice() { 
+        return choiceOfWeapon[Math.floor(Math.random() * choiceOfWeapon.length)];
+    }
+
+    let playerWeapon = prompt("Choose your weapon... Rock, Paper, Scissors?");
+    let computerWeapon = getComputerChoice();
+
+    function playRound(playerWeapon, computerWeapon) {
+        playerWeapon = playerWeapon.toLowerCase();
+        computerWeapon = getComputerChoice().toLowerCase();
+        
+        if (playerWeapon == computerWeapon) {
+            return "Draw";
+        } else if ((playerWeapon == "rock" && computerWeapon == "paper") ||
+            (playerWeapon == "paper" && computerWeapon == "scissors") ||
+            (playerWeapon == "scissors" && computerWeapon == "rock"))
+            { return "Better luck next time, kid.";
+        } else ((playerWeapon == "rock" && computerWeapon == "scissors") ||
+            (playerWeapon == "paper" && computerWeapon == "rock") ||
+            (playerWeapon == "scissors" && computerWeapon == "paper"))
+            { return "Huh, you won.";
+        }
+    }
+    console.log(playRound(playerWeapon, computerWeapon));
 }
-
-function playRound(playerWeapon, computerWeapon) {
-    playerWeapon.toLowerCase()
-    computerWeapon.toLowerCase()
-    
-    if (playerWeapon == computerWeapon) {
-        return "Draw";
-    } else if (playerWeapon == "rock" && computerWeapon == "paper") {
-        return "Better luck next time."
-    } else if (playerWeapon == "rock" && computerWeapon == "scissors") {
-        return "You win."
-    } else if (playerWeapon == "scissors" && computerWeapon == "rock") {
-        return "Better luck next time."
-    } else if (playerWeapon == "scissors" && computerWeapon == "paper") {
-        return "You win."
-    } else if (playerWeapon == "paper" && computerWeapon == "scissors") {
-        return "Better luck next time."
-    } else if (playerWeapon == "paper" && computerWeapon == "rock") {
-        return "You win."
-    } 
-}
-
