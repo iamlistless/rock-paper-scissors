@@ -19,10 +19,12 @@ function game() {
             (playerWeapon == "paper" && computerWeapon == "scissors") ||
             (playerWeapon == "scissors" && computerWeapon == "rock"))
             { return "Better luck next time, kid.";
-        } else ((playerWeapon == "rock" && computerWeapon == "scissors") ||
+        } else if ((playerWeapon == "rock" && computerWeapon == "scissors") ||
             (playerWeapon == "paper" && computerWeapon == "rock") ||
             (playerWeapon == "scissors" && computerWeapon == "paper"))
             { return "Huh, you won.";
+        } else (playerWeapon !== "rock" || "paper" || "scissors")
+            {return "Hey. Like they say, 'Don't bring a knife to a fist fight', bud.";
         }
     }
     console.log(playRound(playerWeapon, computerWeapon));
