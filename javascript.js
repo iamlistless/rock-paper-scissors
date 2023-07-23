@@ -1,12 +1,12 @@
 function game() {
     for (i= 0; i < 5; i++) {
+        let playerWeapon = prompt("Choose your weapon... Rock, Paper, Scissors?");
         const choiceOfWeapon = ["Rock", "Paper", "Scissors"];
 
         function getComputerChoice() { 
             return choiceOfWeapon[Math.floor(Math.random() * choiceOfWeapon.length)];
         }
 
-        let playerWeapon = prompt("Choose your weapon... Rock, Paper, Scissors?");
         let computerWeapon = getComputerChoice();
 
             function playRound(playerWeapon, computerWeapon) {
@@ -30,3 +30,5 @@ function game() {
             console.log(playRound(playerWeapon, computerWeapon));
     }
 }
+
+game();
