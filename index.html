@@ -3,10 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
     <title>Document</title>
 </head>
 <body>
-    
+    <div class="startGameContainer">
+        <button class="start">Begin Battle</button>
+    </div>
+    <div class="buttonContainer">
+        <button class="weapon" data-player-weapon="rock">Rock</button>
+        <button class="weapon" data-player-weapon="paper">Paper</button>
+        <button class="weapon" data-player-weapon="scissors">Scissors</button>
+    </div>
+    <div class="results">
+        <p class="battleResults">Who will be the victor?</p>
+    </div>
+    <div class="scoreKeeper">
+        You: <p class="playerScoreKeeper">0</p>
+        Computer: <p class="computerScoreKeeper">0</p>
+    </div>
 </body>
 </html>
